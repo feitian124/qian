@@ -17,10 +17,13 @@ Qian.Router.reopen({
   location: "history",
 
   notifyGoogleAnalytics: function() {
+    /*
     return ga('send', 'pageview', {
         'page': this.get('url'),
         'title': this.get('url')
       });
+    */
+    return '';
   }.on('didTransition'),
 
   updateTitle: function() {

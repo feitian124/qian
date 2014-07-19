@@ -1,0 +1,20 @@
+{{#each}}
+  <div class="row entry">
+    <div class="span2">
+      {{gravatar-image emailHash=authorGravatarEmailHash size="90"}}
+      <div class="author">{{authorName}}</div>
+    </div>
+
+    <div class="span10">
+      <div>
+        {{link-to title "entries.show" this class="title"}}
+      </div>
+      <div class="posted-at">
+        <i class="fa fa-clock-o"></i> {{format-date createdAt}}
+      </div>
+      <hr>
+
+      <div class="body">{{format-markdown body}}</div>
+    </div>
+  </div>
+{{/each}}

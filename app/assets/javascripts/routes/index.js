@@ -1,0 +1,5 @@
+Qian.IndexRoute = Ember.Route.extend({
+  beforeModel: function() {
+    this.replaceWith("entries");
+  }
+});

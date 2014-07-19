@@ -1,46 +1,46 @@
 <div class="row entry submit">
 
-  <div class="title">Submit</div>
+  <div class="title">添加</div>
   <hr>
 
   {{#if isAdding}}
-    Adding ...
+    正在添加 ...
   {{else}}
     <div class="alert alert-info">
-      Tips before you hit <strong>Submit</strong>:
+      <strong>添加</strong>前请注意:
       <br><br>
       <ul>
-        <li>We support markdown so use that to format your entry</li>
-        <li>Use the live preview area below to make sure all of the formatting and links are working correctly</li>
+        <li>支持 markdown 格式</li>
+        <li>使用实时预览区检查输入内容格式和链接工作良好</li>
       </ul>
     </div>
 
     <form {{action "createEntry" on="submit" }} class="form-horizontal">
       {{#unless session.isAuthenticated}}
         <div class="control-group">
-          <label class="control-label" for="inputAuthor">Author</label>
+          <label class="control-label" for="inputAuthor">作者</label>
           <div class="controls">
             {{input type="text" value=authorName id="inputAuthor" placeholder="Author"}}
           </div>
         </div>
       {{/unless}}
       <div class="control-group">
-        <label class="control-label" for="inputTitle">Title</label>
+        <label class="control-label" for="inputTitle">标题</label>
         <div class="controls">
           {{input type="text" value=title id="inputTitle" placeholder="Title"}}
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="inputBody">Content</label>
+        <label class="control-label" for="inputBody">内容</label>
         <div class="controls">
           {{textarea value=body id="inputBody" placeholder="Content"}}
         </div>
       </div>
       <div class="control-group">
         <div class="controls">
-          {{input type="submit" value="Submit" disabled=fieldsEmpty class="btn"}}
-          or
-          {{link-to "Cancel" "entries"}}
+          {{input type="submit" value="提交" disabled=fieldsEmpty class="btn"}}
+          或
+          {{link-to "取消" "entries"}}
         </div>
       </div>
     </form>
@@ -52,7 +52,7 @@
         {{format-markdown body}}
       {{else}}
         <div class="info-message">
-          Live preview area. Enter some text in the textarea above and watch me change
+          <b>在上面文本框输入内容,在此次实时预览</b>
         </div>
       {{/if}}
     </div>

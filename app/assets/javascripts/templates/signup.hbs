@@ -1,31 +1,31 @@
 <div class="row signup">
 
-  <div class="title">Sign up</div>
+  <div class="title">注册</div>
   <hr>
 
   {{#if signupFailed}}
     <div class="alert alert-error">
       <button {{ action "clearWarning" }}type="button" class="close">&times;</button>
-      Signup failed! Please double check that the values you provided meet the requirements mentioned below.
+      注册失败! 请检查注册信息满足要求.
     </div>
   {{/if}}
 
   <div class="span6">
     <form {{action 'signup' on='submit'}} class="form-horizontal">
       <div class="control-group">
-        <label class="control-label" for="username">Username</label>
+        <label class="control-label" for="username">用户名</label>
         <div class="controls">
           {{view Ember.TextField id='username' value=username placeholder='Username'}}
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="email">Email</label>
+        <label class="control-label" for="email">电子邮箱</label>
         <div class="controls">
           {{view Ember.TextField id='email' value=email placeholder='Email'}}
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="password">Password</label>
+        <label class="control-label" for="password">密码</label>
         <div class="controls">
           {{view Ember.TextField id='password' type='password' value=password placeholder='Password'}}
         </div>
@@ -40,13 +40,13 @@
 
   <div class="span5">
     <div class="alert alert-info">
-      A couple of things you should know:
+      注意事项:
       <br>
       <br>
       <ul>
-        <li>Username - min: 2, max: 50</li>
-        <li>Email - a valid one (used for avatars)</li>
-        <li>Password - min: 6, max: 50</li>
+        <li>用户名 - 最短 2 个字符最长 50 个字符</li>
+        <li>电子邮箱 - 正确的邮箱电子 (会从 gavatar 服务获取头像)</li>
+        <li>密码 - 最短 6 个字符最长 50 个字符</li>
       </ul>
     </div>
   </div>

@@ -1,42 +1,43 @@
 <div class="row account">
-  <div class="title">{{session.username}}'s account</div>
+  <div class="title">{{session.username}} 的账号</div>
   <hr>
 
   {{#if saveSucceeded}}
     <div class="alert alert-success">
-      Account was updated successfuly.
+      账号更新成功.
     </div>
   {{/if}}
 
   {{#if saveFailed}}
     <div class="alert alert-error">
       Account failed to update. Please make sure that the data you entered comforms to the rules mentioned below.
+      账号更新失败. 请检查输入的数据满足要求.
     </div>
   {{/if}}
 
   <div class="span6">
     <form {{action "updateAccount" on="submit" }} class="form-horizontal">
       <div class="control-group">
-        <label class="control-label" for="email">Email</label>
+        <label class="control-label" for="email">电子邮箱</label>
         <div class="controls">
           {{input type="text" value=email id="email" placeholder="Email"}}
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="old_password">Old password</label>
+        <label class="control-label" for="old_password">原密码</label>
         <div class="controls">
           {{input type="password" value=oldPassword id="old_password" placeholder="Old password"}}
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="new_password">New Password</label>
+        <label class="control-label" for="new_password">新密码</label>
         <div class="controls">
           {{input type="password" value=newPassword id="new_password" placeholder="New password"}}
         </div>
       </div>
       <div class="control-group">
         <div class="controls">
-          {{input type="submit" value="Update" class="btn"}}
+          {{input type="submit" value="更新" class="btn"}}
         </div>
       </div>
     </form>
@@ -44,12 +45,12 @@
 
   <div class="span5">
     <div class="alert alert-info">
-      Make sure you follow these rules:
+      注意事项:
       <br>
       <br>
       <ul>
-        <li>Email - a valid one (used for avatars)</li>
-        <li>Password - min: 6, max: 50</li>
+        <li>电子邮箱 - 正确的邮箱电子 (会从 gavatar 服务获取头像)</li>
+        <li>密码 - 最短 6 个字符最长 50 个字符</li>
       </ul>
     </div>
   </div>
